@@ -4,41 +4,25 @@
 
  		为求解自动驾驶静态避障任务，我们建立了一个路径规划库和场景库：考虑运动学的自动驾驶静态路径规划库(Libraries for Autonomous Driving Static Motion Planning Nonholonomic, LADSMPN)，如下图所示，该库包括一组算法和测试场景。
 
-![image-20240911190124963](C:\Users\zhou\AppData\Roaming\Typora\typora-user-images\image-20240911190124963.png)
+ <img width="426" alt="image" src="https://github.com/user-attachments/assets/bea8c1e8-7121-4ffb-a189-001ea68b5086">
 
 ​		==**该库可以分为对象模块、算法模块和结果模块，对LADSMPN的详细介绍将在论文接收后进行开源。==**
 
-![image-20240911190332383](C:\Users\zhou\AppData\Roaming\Typora\typora-user-images\image-20240911190332383.png)
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/a2591a47-4040-4300-9a4d-d9723b903363">
 
 ## 2，Question
 
 ​        静态路障下的局部避障规划是在全局路径规划的基础上，依据感知信息，输出一条满足**运动学约束、两点边值约束、曲率约束及碰撞躲避约束**的光滑的、安全的路径。主要解决的问题为：如下面示意图所示，给定起始位姿和终止位姿，障碍物位置，尺寸等，规划一条安全平滑的路径供车辆执行。
 
-![image-20240911185221104](C:\Users\zhou\AppData\Roaming\Typora\typora-user-images\image-20240911185221104.png)
+<img width="388" alt="image" src="https://github.com/user-attachments/assets/27163c10-da80-4620-8238-c0d4487eebd6">
 
 ## 3，Vehicle Kinematic
 
 ​		使用的车辆模型为阿克曼转向模型：
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/4a8b8a2b-4958-475e-8da6-bf9569a2a54e">
 
-![image-20240911185548851](C:\Users\zhou\AppData\Roaming\Typora\typora-user-images\image-20240911185548851.png)
+![image](https://github.com/user-attachments/assets/6895ae70-a4d1-423e-9179-97ae5465a4fd)
 
-![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps1.png       )        
-
-在此等式中：
-
-·时刻![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps2.png)为待定变量；
-
-·![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps3.png)为车辆后轮轴中点坐标；
-
-·![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps4.png)分别为沿车体纵轴方向的速度及加速度，以车辆前进的方向为正；
-
-·![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps5.png)为前轮转向角，以左偏为正；
-
-·![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps6.png)为前轮转向角速度；
-
-·![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps7.png)为车辆航向角，即从![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps8.png)轴正方向到车体纵轴正方向的角度，以逆时针转向为正；
-
-·![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps9.png)为前后轮轴距，![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps10.png)为车辆前悬距离，![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps11.png)为车辆后悬距离，![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps12.png)为车长，![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps13.png)为车宽。
 
 ## 4，Results
 
@@ -58,9 +42,16 @@
 
 | 初始场景                                                     | 障碍物密度0.1                                                | 障碍物密度0.3                                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps20.jpg) | ![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps21.jpg) | ![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps22.jpg) |
+| <img width="124" alt="image" src="https://github.com/user-attachments/assets/809103ae-4d52-4d14-9024-22da478f2a60">
+ |<img width="124" alt="image" src="https://github.com/user-attachments/assets/b2ef8e79-61be-432f-a840-be5191151c5e">
+ | <img width="124" alt="image" src="https://github.com/user-attachments/assets/4b01c6bf-bbb2-47e8-904e-7852fa33d2ea">
+ |
 | 障碍物密度0.5                                                | 障碍物密度0.7                                                | 障碍物密度0.9                                                |
-| ![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps23.jpg) | ![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps24.jpg) | ![img](file:///C:\Users\zhou\AppData\Local\Temp\ksohtml14100\wps25.jpg) |
+| <img width="124" alt="image" src="https://github.com/user-attachments/assets/d3c751a9-8d50-43f3-aca8-17111cacd5bd">
+ | <img width="124" alt="image" src="https://github.com/user-attachments/assets/c2990aeb-a06a-4004-846f-d18069e194b5">
+| <img width="124" alt="image" src="https://github.com/user-attachments/assets/d33a2cf1-792a-4904-aae6-aca356b29c31">
+
+ |
 
 ## 5，Historical Version
 
